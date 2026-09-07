@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="img/escudo-mid.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/marcadorIphone.png">
+
+
+
+<title>Sporting Torrenueva · Temporada 2026-27</title>
+<style>
+  :root{
+    --bg: #f5f5f7;
+    --card: #ffffff;
+    --ink: #1d1d1f;
+    --ink-soft: #6e6e73;
+    --line: #e5e5ea;
+    --green: #2805FB;
+    --green-deep: #00013f;
+    --green-tint: #e9f5eb;
+    --red-tint: #fdeceb;
+    --red: #c0392b;
+    --gold: #b8860b;
+    --radius: 18px;
+    --radius-sm: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  *{ box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--ink);
+    padding: 32px 18px 80px;
+  }
+
+  .wrap{ max-width: 640px; margin: 0 auto; }
+
+  /* Header */
+  .club-header{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom: 28px;
+    padding: 0 4px;
+  }
+  .crest{
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      overflow: hidden; /* Para que el escudo no sobresalga */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none; /* Quitamos el degradado */
+      flex-shrink: 0;
+  }
+
+  .crest img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ajusta la imagen sin deformarla */
+}
+
+  .club-header h1{
+    font-size: 19px;
+    font-weight: 650;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .club-header p{
+    margin: 2px 0 0;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+
+  /* Hero: próximo partido */
+  .hero{
+    background: linear-gradient(160deg, #090489 0% 0%, #00013f 100%);
+    border-radius: 24px;
+    padding: 26px 24px 24px;
+    color: white;
+    box-shadow: 0 10px 30px -12px rgba(31,92,41,0.55);
+    margin-bottom: 34px;
+  }
+  .hero-label{
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 0.85;
+    margin: 0 0 18px;
+  }
+  .hero-teams{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap: 10px;
+  }
+  .hero-team{
+    flex: 1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap: 10px;
+    text-align:center;
+  }
+  .hero-badge{
+    width:56px; height:56px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.16);
+    display:flex; align-items:center; justify-content:center;
+    font-weight:700;
+    font-size: 15px;
+    border: 1px solid rgba(255,255,255,0.25);
+  }
+  .hero-team.us .hero-badge{
+    background: white;
+    color: var(--green-deep);
+  }
+  .hero-team span{
+    font-size: 13.5px;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+  .hero-mid{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap: 4px;
+    min-width: 74px;
+  }
+  .hero-vs{
+    font-size: 12px;
+    opacity: 0.7;
+    font-weight: 600;
+  }
+  .hero-date{
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .hero-time{
+    font-size: 12px;
+    opacity: 0.85;
+  }
+  .hero-foot{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    margin-top: 22px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    font-size: 12.5px;
+  }
+  .hero-foot .comp{ opacity: 0.85; }
+  .hero-foot .countdown{
+    background: rgba(255,255,255,0.18);
+    padding: 5px 11px;
+    border-radius: 100px;
+    font-weight: 600;
+  }
+
+  /* Section title */
+  .section-title{
+    font-size: 22px;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    margin: 0 0 4px;
+    padding: 0 4px;
+  }
+  .section-sub{
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    margin: 0 0 16px;
+    padding: 0 4px;
+  }
+
+  /* Filter pills */
+  .filters{
+    display:flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding: 0 4px;
+  }
+  .pill{
+    border: none;
+    background: var(--card);
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 100px;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .pill.active{
+    background: var(--ink);
+    color: white;
+  }
+
+  /* Month groups */
+  .month-group{ margin-bottom: 22px; }
+  .month-label{
+    font-size: 12.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--ink-soft);
+    margin: 0 0 8px;
+    padding: 0 8px;
+  }
+
+  .match-list{
+    background: var(--card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .match-row{
+    display:flex;
+    align-items:center;
+    gap: 12px;
+    padding: 13px 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  .match-row:last-child{ border-bottom: none; }
+
+  .jday{
+    width: 30px;
+    flex-shrink:0;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--ink-soft);
+    text-align:center;
+  }
+
+  .match-teams{
+    flex: 1;
+    min-width: 0;
+    display:flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .team-line{
+    display:flex;
+    align-items:center;
+    gap: 6px;
+    font-size: 14px;
+    color: var(--ink);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .team-line.us{ font-weight: 650; }
+  .team-line .tag{
+    font-size: 10px;
+    font-weight: 700;
+    color: white;
+    background: green;
+    padding: 1px 6px;
+    border-radius: 5px;
+    flex-shrink: 0;
+  }
+
+  .match-right{
+    flex-shrink:0;
+    text-align:right;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap: 3px;
+    min-width: 58px;
+  }
+  .match-date{
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    font-weight: 600;
+  }
+  .match-score{
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .match-score.win{ color: var(--green); }
+  .match-score.loss{ color: var(--red); }
+  .match-score.draw{ color: var(--gold); }
+
+  .result-dot{
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .dot-win{ background: var(--green); }
+  .dot-loss{ background: var(--red); }
+  .dot-draw{ background: var(--gold); }
+
+  footer{
+    text-align:center;
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    margin-top: 30px;
+    padding: 0 20px;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 380px){
+    .hero-badge{ width:48px; height:48px; font-size:13px; }
+    .hero-date{ font-size: 18px; }
+  }
+
+.hero .badge-img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+.badge-img{
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="club-header">
+    <div class="crest">
+      <img src="img/escudo-mid.png" alt="Escudo Sporting Torrenueva">
+    </div>
+    <div>
+      <h1>Sporting Torrenueva</h1>
+      <p>2ª Autonómica · Castilla-La Mancha</p>
+    </div>
+  </div>
+
+  <!-- HERO: próximo partido -->
+  <div class="hero" id="hero"></div>
+
+  <!-- Listado completo -->
+  <div class="section-title">Todos los partidos</div>
+  <div class="section-sub">Temporada 2026-27 · 32 jornadas</div>
+
+  <div class="filters">
+    <button class="pill active" data-filter="all">Todos</button>
+    <button class="pill" data-filter="home">En casa</button>
+    <button class="pill" data-filter="away">Fuera</button>
+  </div>
+
+  <div id="schedule"></div>
+
+  <footer>
+    Datos de la temporada 2026-27. El calendario puede sufrir cambios de fecha u hora por parte de la federación.<br>
+	by Camilo Madrid 
+  </footer>
+
+</div>
+
+<script>
+// ---- Datos: temporada 2026-27, Sporting Torrenueva, 2ª Auto. Castilla-La Mancha ----
+const matches = [
+  { j:1,  home:"Las Casas CD",              away:"Sporting Torrenueva",       date:"2026-09-13", isHome:false },
+  { j:2,  home:"Sporting Torrenueva",       away:"Cd Piedrabuena",            date:"2026-09-19", isHome:true },
+  { j:3,  home:"Calatrava CF",              away:"Sporting Torrenueva",       date:"2026-09-26", isHome:false },
+  { j:4,  home:"Sporting Torrenueva",       away:"Infantes CF",               date:"2026-10-03", isHome:true },
+  { j:5,  home:"UD La Fuente B",            away:"Sporting Torrenueva",       date:"2026-10-10", isHome:false },
+  { j:6,  home:"Sporting Torrenueva",       away:"Ciudad Real FC",            date:"2026-10-17", isHome:true },
+  { j:8,  home:"Sporting Torrenueva",       away:"Atlético Almagro",          date:"2026-10-31", isHome:true },
+  { j:9,  home:"Valenzuela AD",             away:"Sporting Torrenueva",       date:"2026-11-07", isHome:false },
+  { j:10, home:"Sporting Torrenueva",       away:"Manchego Ciudad Real B",    date:"2026-11-14", isHome:true },
+  { j:11, home:"Porzuna CDB",               away:"Sporting Torrenueva",       date:"2026-11-21", isHome:false },
+  { j:12, home:"Sporting Torrenueva",       away:"Corraleño CF",              date:"2026-11-28", isHome:true },
+  { j:13, home:"Castillo de Cva Aldea del R", away:"Sporting Torrenueva",     date:"2026-12-05", isHome:false },
+  { j:14, home:"Sporting Torrenueva",       away:"Moraleño",                  date:"2026-12-12", isHome:true },
+  { j:15, home:"Sporting Torrenueva",       away:"Calzada CF",                date:"2026-12-19", isHome:true },
+  { j:16, home:"La Estrella CD",            away:"Sporting Torrenueva",       date:"2027-01-09", isHome:false },
+  { j:17, home:"Sporting Torrenueva",       away:"Poblete UD",                date:"2027-01-16", isHome:true },
+  { j:18, home:"Sporting Torrenueva",       away:"Las Casas CD",              date:"2027-01-23", isHome:true },
+  { j:19, home:"Cd Piedrabuena",            away:"Sporting Torrenueva",       date:"2027-01-30", isHome:false },
+  { j:20, home:"Sporting Torrenueva",       away:"Calatrava CF",              date:"2027-02-06", isHome:true },
+  { j:21, home:"Infantes CF",               away:"Sporting Torrenueva",       date:"2027-02-13", isHome:false },
+  { j:22, home:"Sporting Torrenueva",       away:"UD La Fuente B",            date:"2027-02-20", isHome:true },
+  { j:23, home:"Ciudad Real FC",            away:"Sporting Torrenueva",       date:"2027-02-28", time:"10:30", isHome:false },
+  { j:25, home:"Atlético Almagro",          away:"Sporting Torrenueva",       date:"2027-03-13", isHome:false },
+  { j:26, home:"Sporting Torrenueva",       away:"Valenzuela AD",             date:"2027-03-20", isHome:true },
+  { j:27, home:"Manchego Ciudad Real B",    away:"Sporting Torrenueva",       date:"2027-04-03", isHome:false },
+  { j:28, home:"Sporting Torrenueva",       away:"Porzuna CDB",               date:"2027-04-10", isHome:true },
+  { j:29, home:"Corraleño CF",              away:"Sporting Torrenueva",       date:"2027-04-17", isHome:false },
+  { j:30, home:"Sporting Torrenueva",       away:"Castillo de Cva Aldea del R", date:"2027-04-24", isHome:true },
+  { j:31, home:"Moraleño",                  away:"Sporting Torrenueva",       date:"2027-05-01", isHome:false },
+  { j:32, home:"Calzada CF",                away:"Sporting Torrenueva",       date:"2027-05-08", isHome:false },
+  { j:33, home:"Sporting Torrenueva",       away:"La Estrella CD",            date:"2027-05-15", isHome:true },
+  { j:34, home:"Poblete UD",                away:"Sporting Torrenueva",       date:"2027-05-22", isHome:false },
+];
+
+const MESES = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+const MESES_CORTO = ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
+const DIAS = ["dom","lun","mar","mié","jue","vie","sáb"];
+
+function initials(name){
+  return name.split(" ").filter(w => w.length > 1 || /[A-Za-zÁÉÍÓÚÑ]/.test(w))
+    .slice(0,2).map(w => w[0].toUpperCase()).join("") || name.slice(0,2).toUpperCase();
+}
+
+function fmtLongDate(d){
+  return `${DIAS[d.getDay()]} ${d.getDate()} ${MESES[d.getMonth()]}`;
+}
+
+function daysUntil(d, now){
+  const a = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+  const b = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  return Math.round((a - b) / 86400000);
+}
+
+// Mapa de escudos por nombre EXACTO
+const ESCUDOS = {
+  "Sporting Torrenueva": "escudo-mid.png",
+  "Las Casas CD": "lascasas.png",
+  "Cd Piedrabuena": "piedrabuena.png",
+  "Calatrava CF": "calatrava.png",
+  "Infantes CF": "infantes.png",
+  "UD La Fuente B": "laFuente.png",
+  "Ciudad Real FC": "ciudadreal.jpg",
+  "Atlético Almagro": "almagro.png",
+  "Valenzuela AD": "valenzuela.png",
+  "Manchego Ciudad Real B": "manchego.png",
+  "Porzuna CDB": "porzuna.jpg",
+  "Corraleño CF": "corraleno.png",
+  "Castillo de Cva Aldea del R": "generico.png",
+  "Moraleño": "moraleno.png",
+  "Calzada CF": "calzada.png",
+  "La Estrella CD": "LaEstrella.png",
+  "Poblete UD": "poblete.png"
+};
+
+function getBadge(teamName){
+  const file = ESCUDOS[teamName];
+  if(file){
+    return `<img src="img/escudosEquipos/${file}" alt="${teamName}" class="badge-img">`;
+  }
+  return initials(teamName); // fallback
+}
+
+
+function renderHero(){
+  const now = new Date();
+  const upcoming = matches
+    .map(m => ({...m, dateObj: new Date(m.date + "T" + (m.time || "17:00"))}))
+    .filter(m => m.dateObj >= new Date(now.getFullYear(), now.getMonth(), now.getDate()))
+    .sort((a,b) => a.dateObj - b.dateObj)[0];
+
+  const hero = document.getElementById("hero");
+
+  if(!upcoming){
+    hero.innerHTML = `<p class="hero-label">Temporada finalizada</p>`;
+    return;
+  }
+
+  const rival = upcoming.isHome ? upcoming.away : upcoming.home;
+  const usBadge = getBadge("Sporting Torrenueva");
+  const rivalBadge = getBadge(rival);
+  const d = upcoming.dateObj;
+  const diff = daysUntil(d, now);
+  let countdown = diff === 0 ? "Hoy" : diff === 1 ? "Mañana" : `Dentro de ${diff} días`;
+
+  hero.innerHTML = `
+    <p class="hero-label">Próximo partido · Jornada ${upcoming.j}</p>
+    <div class="hero-teams">
+      <div class="hero-team ${upcoming.isHome ? 'us' : ''}">
+        <div class="hero-badge">${upcoming.isHome ? usBadge : getBadge(upcoming.home)}</div>
+        <span>${upcoming.home}</span>
+      </div>
+      <div class="hero-mid">
+        <span class="hero-vs">${d.getDate()} ${MESES_CORTO[d.getMonth()]}</span>
+        <span class="hero-date">${DIAS[d.getDay()].toUpperCase()}</span>
+        <span class="hero-time">${upcoming.time || "17:00"} h</span>
+      </div>
+      <div class="hero-team ${!upcoming.isHome ? 'us' : ''}">
+        <div class="hero-badge">${!upcoming.isHome ? usBadge : getBadge(upcoming.away)}</div>
+        <span>${upcoming.away}</span>
+      </div>
+    </div>
+    <div class="hero-foot">
+      <span class="comp">2ª Auto. Castilla-La Mancha</span>
+      <span class="countdown">${countdown}</span>
+    </div>
+  `;
+}
+
+function renderSchedule(filter){
+  const container = document.getElementById("schedule");
+  container.innerHTML = "";
+
+  const filtered = matches.filter(m => {
+    if(filter === "home") return m.isHome;
+    if(filter === "away") return !m.isHome;
+    return true;
+  });
+
+  const groups = {};
+  filtered.forEach(m => {
+    const d = new Date(m.date + "T00:00:00");
+    const key = `${d.getFullYear()}-${d.getMonth()}`;
+    if(!groups[key]) groups[key] = { label: `${MESES[d.getMonth()]} ${d.getFullYear()}`, items: [] };
+    groups[key].items.push({...m, dateObj: d});
+  });
+
+  Object.values(groups).forEach(group => {
+    const monthDiv = document.createElement("div");
+    monthDiv.className = "month-group";
+
+    const label = document.createElement("p");
+    label.className = "month-label";
+    label.textContent = group.label;
+    monthDiv.appendChild(label);
+
+    const list = document.createElement("div");
+    list.className = "match-list";
+
+    group.items.forEach(m => {
+      const row = document.createElement("div");
+      row.className = "match-row";
+
+      const rival = m.isHome ? m.away : m.home;
+
+      row.innerHTML = `
+        <div class="jday">J${m.j}</div>
+
+        <div class="match-teams">
+
+          <div class="team-line ${m.isHome ? 'us' : ''}">
+            ${m.isHome ? '<span class="tag">CASA</span>' : ''}
+            <img src="img/escudosEquipos/${ESCUDOS[m.home] || 'generico.png'}" class="badge-img">
+            ${m.home}
+          </div>
+
+          <div class="team-line ${!m.isHome ? 'us' : ''}">
+            ${!m.isHome ? '<span class="tag" style="background:#8a8a8e">FUERA</span>' : ''}
+            <img src="img/escudosEquipos/${ESCUDOS[m.away] || 'generico.png'}" class="badge-img">
+            ${m.away}
+          </div>
+
+        </div>
+
+        <div class="match-right">
+          <div class="match-date">${m.dateObj.getDate()} ${MESES_CORTO[m.dateObj.getMonth()]}</div>
+          <div class="match-date" style="font-weight:400;">${m.time || "17:00"} h</div>
+        </div>
+      `;
+
+      list.appendChild(row);
+    });
+
+    monthDiv.appendChild(list);
+    container.appendChild(monthDiv);
+  });
+}
+
+
+document.querySelectorAll(".pill").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".pill").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    renderSchedule(btn.dataset.filter);
+  });
+});
+
+renderHero();
+renderSchedule("all");
+</script>
+</body>
+</html>
