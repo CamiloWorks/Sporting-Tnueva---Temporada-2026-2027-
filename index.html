@@ -323,6 +323,28 @@
   object-fit: contain;
 }
 
+.match-score {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* separación entre punto y texto */
+}
+
+
+.match-score.win{ color: #008000; }
+.match-score.loss{ color: var(--red); }
+.match-score.draw{ color: var(--gold); }
+
+.result-dot{
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dot-win{ background: #008000; }
+.dot-loss{ background: var(--red); }
+.dot-draw{ background: var(--gold); }
+
 </style>
 </head>
 <body>
@@ -363,43 +385,64 @@
 <script>
 // ---- Datos: temporada 2026-27, Sporting Torrenueva, 2ª Auto. Castilla-La Mancha ----
 const matches = [
-  { j:1,  home:"Las Casas CD",              away:"Sporting Torrenueva",       date:"2026-09-13", time:"18:30", isHome:false },
-  { j:2,  home:"Sporting Torrenueva",       away:"Cd Piedrabuena",            date:"2026-09-19", isHome:true },
-  { j:3,  home:"Calatrava CF",              away:"Sporting Torrenueva",       date:"2026-09-26", isHome:false },
-  { j:4,  home:"Sporting Torrenueva",       away:"Infantes CF",               date:"2026-10-03", isHome:true },
-  { j:5,  home:"UD La Fuente B",            away:"Sporting Torrenueva",       date:"2026-10-10", isHome:false },
-  { j:6,  home:"Sporting Torrenueva",       away:"Ciudad Real FC",            date:"2026-10-17", isHome:true },
-  { j:8,  home:"Sporting Torrenueva",       away:"Atlético Almagro",          date:"2026-10-31", isHome:true },
-  { j:9,  home:"Valenzuela AD",             away:"Sporting Torrenueva",       date:"2026-11-07", isHome:false },
-  { j:10, home:"Sporting Torrenueva",       away:"Manchego Ciudad Real B",    date:"2026-11-14", isHome:true },
-  { j:11, home:"Porzuna CDB",               away:"Sporting Torrenueva",       date:"2026-11-21", isHome:false },
-  { j:12, home:"Sporting Torrenueva",       away:"Corraleño CF",              date:"2026-11-28", isHome:true },
-  { j:13, home:"Castillo de Cva Aldea del R", away:"Sporting Torrenueva",     date:"2026-12-05", isHome:false },
-  { j:14, home:"Sporting Torrenueva",       away:"Moraleño",                  date:"2026-12-12", isHome:true },
-  { j:15, home:"Sporting Torrenueva",       away:"Calzada CF",                date:"2026-12-19", isHome:true },
-  { j:16, home:"La Estrella CD",            away:"Sporting Torrenueva",       date:"2027-01-09", isHome:false },
-  { j:17, home:"Sporting Torrenueva",       away:"Poblete UD",                date:"2027-01-16", isHome:true },
-  { j:18, home:"Sporting Torrenueva",       away:"Las Casas CD",              date:"2027-01-23", isHome:true },
-  { j:19, home:"Cd Piedrabuena",            away:"Sporting Torrenueva",       date:"2027-01-30", isHome:false },
-  { j:20, home:"Sporting Torrenueva",       away:"Calatrava CF",              date:"2027-02-06", isHome:true },
-  { j:21, home:"Infantes CF",               away:"Sporting Torrenueva",       date:"2027-02-13", isHome:false },
-  { j:22, home:"Sporting Torrenueva",       away:"UD La Fuente B",            date:"2027-02-20", isHome:true },
-  { j:23, home:"Ciudad Real FC",            away:"Sporting Torrenueva",       date:"2027-02-28", time:"10:30", isHome:false },
-  { j:25, home:"Atlético Almagro",          away:"Sporting Torrenueva",       date:"2027-03-13", isHome:false },
-  { j:26, home:"Sporting Torrenueva",       away:"Valenzuela AD",             date:"2027-03-20", isHome:true },
-  { j:27, home:"Manchego Ciudad Real B",    away:"Sporting Torrenueva",       date:"2027-04-03", isHome:false },
-  { j:28, home:"Sporting Torrenueva",       away:"Porzuna CDB",               date:"2027-04-10", isHome:true },
-  { j:29, home:"Corraleño CF",              away:"Sporting Torrenueva",       date:"2027-04-17", isHome:false },
-  { j:30, home:"Sporting Torrenueva",       away:"Castillo de Cva Aldea del R", date:"2027-04-24", isHome:true },
-  { j:31, home:"Moraleño",                  away:"Sporting Torrenueva",       date:"2027-05-01", isHome:false },
-  { j:32, home:"Calzada CF",                away:"Sporting Torrenueva",       date:"2027-05-08", isHome:false },
-  { j:33, home:"Sporting Torrenueva",       away:"La Estrella CD",            date:"2027-05-15", isHome:true },
-  { j:34, home:"Poblete UD",                away:"Sporting Torrenueva",       date:"2027-05-22", isHome:false },
+  { j:1,  home:"Las Casas CD",              away:"Sporting Torrenueva",       date:"2026-09-13", time:"18:30", isHome:false, score:"0-0" },
+  { j:2,  home:"Sporting Torrenueva",       away:"Cd Piedrabuena",            date:"2026-09-19", isHome:true, score:"0-0" },
+  { j:3,  home:"Calatrava CF",              away:"Sporting Torrenueva",       date:"2026-09-26", isHome:false, score:"0-0" },
+  { j:4,  home:"Sporting Torrenueva",       away:"Infantes CF",               date:"2026-10-03", isHome:true, score:"0-0" },
+  { j:5,  home:"UD La Fuente B",            away:"Sporting Torrenueva",       date:"2026-10-10", isHome:false, score:"0-0" },
+  { j:6,  home:"Sporting Torrenueva",       away:"Ciudad Real FC",            date:"2026-10-17", isHome:true, score:"0-0" },
+  { j:8,  home:"Sporting Torrenueva",       away:"Atlético Almagro",          date:"2026-10-31", isHome:true, score:"0-0" },
+  { j:9,  home:"Valenzuela AD",             away:"Sporting Torrenueva",       date:"2026-11-07", isHome:false, score:"0-0" },
+  { j:10, home:"Sporting Torrenueva",       away:"Manchego Ciudad Real B",    date:"2026-11-14", isHome:true, score:"0-0" },
+  { j:11, home:"Porzuna CDB",               away:"Sporting Torrenueva",       date:"2026-11-21", isHome:false, score:"0-0" },
+  { j:12, home:"Sporting Torrenueva",       away:"Corraleño CF",              date:"2026-11-28", isHome:true, score:"0-0" },
+  { j:13, home:"Castillo de Cva Aldea del R", away:"Sporting Torrenueva",     date:"2026-12-05", isHome:false, score:"0-0" },
+  { j:14, home:"Sporting Torrenueva",       away:"Moraleño",                  date:"2026-12-12", isHome:true, score:"0-0" },
+  { j:15, home:"Sporting Torrenueva",       away:"Calzada CF",                date:"2026-12-19", isHome:true, score:"0-0" },
+  { j:16, home:"La Estrella CD",            away:"Sporting Torrenueva",       date:"2027-01-09", isHome:false, score:"0-0" },
+  { j:17, home:"Sporting Torrenueva",       away:"Poblete UD",                date:"2027-01-16", isHome:true, score:"0-0" },
+  { j:18, home:"Sporting Torrenueva",       away:"Las Casas CD",              date:"2027-01-23", isHome:true, score:"0-0" },
+  { j:19, home:"Cd Piedrabuena",            away:"Sporting Torrenueva",       date:"2027-01-30", isHome:false, score:"0-0" },
+  { j:20, home:"Sporting Torrenueva",       away:"Calatrava CF",              date:"2027-02-06", isHome:true, score:"0-0" },
+  { j:21, home:"Infantes CF",               away:"Sporting Torrenueva",       date:"2027-02-13", isHome:false, score:"0-0" },
+  { j:22, home:"Sporting Torrenueva",       away:"UD La Fuente B",            date:"2027-02-20", isHome:true, score:"0-0" },
+  { j:23, home:"Ciudad Real FC",            away:"Sporting Torrenueva",       date:"2027-02-28", time:"10:30", isHome:false, score:"0-0" },
+  { j:25, home:"Atlético Almagro",          away:"Sporting Torrenueva",       date:"2027-03-13", isHome:false, score:"0-0" },
+  { j:26, home:"Sporting Torrenueva",       away:"Valenzuela AD",             date:"2027-03-20", isHome:true, score:"0-0" },
+  { j:27, home:"Manchego Ciudad Real B",    away:"Sporting Torrenueva",       date:"2027-04-03", isHome:false, score:"0-0" },
+  { j:28, home:"Sporting Torrenueva",       away:"Porzuna CDB",               date:"2027-04-10", isHome:true, score:"0-0" },
+  { j:29, home:"Corraleño CF",              away:"Sporting Torrenueva",       date:"2027-04-17", isHome:false, score:"0-0" },
+  { j:30, home:"Sporting Torrenueva",       away:"Castillo de Cva Aldea del R", date:"2027-04-24", isHome:true, score:"0-0" },
+  { j:31, home:"Moraleño",                  away:"Sporting Torrenueva",       date:"2027-05-01", isHome:false, score:"0-0" },
+  { j:32, home:"Calzada CF",                away:"Sporting Torrenueva",       date:"2027-05-08", isHome:false, score:"0-0" },
+  { j:33, home:"Sporting Torrenueva",       away:"La Estrella CD",            date:"2027-05-15", isHome:true, score:"0-0" },
+  { j:34, home:"Poblete UD",                away:"Sporting Torrenueva",       date:"2027-05-22", isHome:false, score:"0-0" },
 ];
 
 const MESES = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
 const MESES_CORTO = ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
 const DIAS = ["dom","lun","mar","mié","jue","vie","sáb"];
+
+function isPlayed(match){
+  const today = new Date();
+  const matchDate = new Date(match.date + "T00:00:00");
+  return matchDate < today && match.score;
+}
+
+function resultType(match){
+  if(!match.score) return null;
+
+  const [g1, g2] = match.score.split("-").map(Number);
+  const usHome = match.isHome;
+
+  const usGoals = usHome ? g1 : g2;
+  const rivalGoals = usHome ? g2 : g1;
+
+  if(usGoals > rivalGoals) return "win";
+  if(usGoals < rivalGoals) return "loss";
+  return "draw";
+}
+
 
 function initials(name){
   return name.split(" ").filter(w => w.length > 1 || /[A-Za-zÁÉÍÓÚÑ]/.test(w))
@@ -525,34 +568,48 @@ function renderSchedule(filter){
       const row = document.createElement("div");
       row.className = "match-row";
 
-      const rival = m.isHome ? m.away : m.home;
+const rival = m.isHome ? m.away : m.home;
+const played = isPlayed(m);
+const rType = resultType(m);
 
-      row.innerHTML = `
-        <div class="jday">J${m.j}</div>
+row.innerHTML = `
+  <div class="jday">J${m.j}</div>
 
-        <div class="match-teams">
+  <div class="match-teams">
 
-          <div class="team-line ${m.isHome ? 'us' : ''}">
-            ${m.isHome ? '<span class="tag">CASA</span>' : ''}
-            <img src="img/escudosEquipos/${ESCUDOS[m.home] || 'generico.png'}" class="badge-img">
-            ${m.home}
-          </div>
+    <div class="team-line ${m.isHome ? 'us' : ''}">
+      ${m.isHome ? '<span class="tag">CASA</span>' : ''}
+      <img src="img/escudosEquipos/${ESCUDOS[m.home] || 'generico.png'}" class="badge-img">
+      ${m.home}
+    </div>
 
-          <div class="team-line ${!m.isHome ? 'us' : ''}">
-            ${!m.isHome ? '<span class="tag" style="background:#8a8a8e">FUERA</span>' : ''}
-            <img src="img/escudosEquipos/${ESCUDOS[m.away] || 'generico.png'}" class="badge-img">
-            ${m.away}
-          </div>
+    <div class="team-line ${!m.isHome ? 'us' : ''}">
+      ${!m.isHome ? '<span class="tag" style="background:#8a8a8e">FUERA</span>' : ''}
+      <img src="img/escudosEquipos/${ESCUDOS[m.away] || 'generico.png'}" class="badge-img">
+      ${m.away}
+    </div>
 
+  </div>
+
+  <div class="match-right">
+
+    <div class="match-date">${m.dateObj.getDate()} ${MESES_CORTO[m.dateObj.getMonth()]}</div>
+    <div class="match-date" style="font-weight:400;">${m.time || ""} ${m.time ? "h" : ""}</div>
+
+  ${
+      played
+      ? `
+        <div class="match-score ${rType}">
+          <span class="result-dot dot-${rType}"></span>
+          Resultado: ${m.score}
         </div>
+      `
+      : ""
+}
+  </div>
+`;
 
-        <div class="match-right">
-          <div class="match-date">${m.dateObj.getDate()} ${MESES_CORTO[m.dateObj.getMonth()]}</div>
-          <div class="match-date" style="font-weight:400;">${m.time || "17:00"} h</div>
-        </div>
-      `;
-
-      list.appendChild(row);
+list.appendChild(row);
     });
 
     monthDiv.appendChild(list);
