@@ -1,0 +1,241 @@
+/* ============================================================
+   ADMIN PANEL — estilo unificado con el modal
+   ============================================================ */
+
+:root {
+  --bg: #f5f5f7;
+  --card: #ffffff;
+  --line: #e5e5ea;
+  --text: #1c1c1e;
+  --sub: #8e8e93;
+  --green: #34c759;
+  --red: #ff3b30;
+  --gold: #ffcc00;
+
+  --radius: 20px;
+  --shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.admin-wrap {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* ============================================================
+   LOGIN VIEW
+   ============================================================ */
+
+.login-view {
+  background: var(--card);
+  padding: 26px 22px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  margin-top: 50px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  animation: fadeIn 0.25s ease-out;
+}
+
+.login-view h2 {
+  margin-bottom: 22px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.login-view input {
+  width: 90%;
+  padding: 12px 14px;
+  font-size: 14px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  margin-bottom: 16px;
+  background: #fafafa;
+  transition: 0.15s ease;
+}
+
+.login-view input:focus {
+  outline: none;
+  border-color: var(--text);
+  background: #fff;
+}
+
+.btn {
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: none;
+  background: #34C759;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 600;
+  transition: 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+/* ============================================================
+   PANEL VIEW
+   ============================================================ */
+
+.panel-view {
+  position: relative; /* Necesario para el botón flotante */
+  background: var(--card);
+  padding: 26px 22px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  margin-top: 40px;
+  box-shadow: var(--shadow);
+  animation: fadeIn 0.25s ease-out;
+}
+
+/* ============================================================
+   HEADER DEL PANEL
+   ============================================================ */
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.panel-header h2 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* ============================================================
+   BOTÓN "VOLVER" — estilo secundario
+   ============================================================ */
+
+.logout-btn {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  transition: 0.15s ease;
+}
+
+.logout-btn:hover {
+  background: var(--bg);
+  color: var(--text);
+  transform: translateY(-2px);
+}
+
+
+
+/* ============================================================
+   BOTÓN "CERRAR SESIÓN" — acción crítica
+   ============================================================ */
+
+.flotar {
+  position: absolute;
+  top: -50px;
+  right: 0px;
+
+  background-color: var(--red);
+  color: #fff;
+
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: none;
+
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.flotar:hover {
+  background-color: #d12a25;
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   FORM FIELDS
+   ============================================================ */
+
+label {
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#match-select,
+#score-input,
+#scorers-input,
+#summary-input {
+  width: 90%;
+  padding: 12px 14px;
+  font-size: 14px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: #fafafa;
+  transition: 0.15s ease;
+}
+
+#match-select:focus,
+#score-input:focus,
+#scorers-input:focus,
+#summary-input:focus {
+  outline: none;
+  border-color: var(--text);
+  background: #fff;
+}
+
+#summary-input {
+  min-height: 130px;
+  resize: none;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   SAVE BUTTON
+   ============================================================ */
+
+.save-btn {
+  margin-top: 24px;
+  background: var(--green);
+  color: #fff;
+  font-weight: 650;
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.15s ease;
+}
+
+.save-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+/* ============================================================
+   ANIMACIONES
+   ============================================================ */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

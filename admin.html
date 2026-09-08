@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/escudo-mid.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/marcadorIphone.png">
+  
+  <title>Panel Administrador · Sporting Torrenueva</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/admin.css">
+
+  <!-- Fuente -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="admin-wrap">
+
+    <!-- LOGIN -->
+    <div id="login-view" class="login-view">
+      <a href="index.html" style="text-decoration: none;"><p style="color: #757575;
+                                                                    border: 1px solid #ebebee;
+                                                                    font-size: 14px;
+                                                                    width: 80px;
+                                                                    border-radius: 500px;
+                                                                    padding: 5px;
+                                                                    background-color: #fff;" >Volver</p></a>
+      <img src="img/escudo-mid.png" width="80px" alt="Escudo del Club" style="cursor: pointer;">
+      <h2>Acceso administrador</h2>
+
+      <input type="password" id="admin-pass" placeholder="Contraseña">
+      <button id="login-submit" class="btn">Entrar</button>
+    </div>
+
+    
+
+    <!-- PANEL -->
+    <div id="panel-view" class="panel-view" style="display:none;">
+      <button id="logout-btn" class="flotar">Cerrar sesión</button>
+           
+
+      <div class="panel-header">
+        <h2>Panel de resultados</h2>
+        <button id="go-home-btn" class="logout-btn">Volver</button>
+      </div>
+
+
+      <!-- Selector de partido -->
+      <label for="match-select">Seleccionar jornada:</label>
+      <select id="match-select"></select>
+
+      <!-- Resultado -->
+      <label for="score-input">Resultado:</label>
+      <input type="text" id="score-input" placeholder="Ej: 2-1">
+
+      <!-- Goleadores -->
+      <label for="scorers-input">Goleadores:</label>
+      <input type="text" id="scorers-input" placeholder="Ej: Juan, Pedro">
+
+      <!-- Resumen -->
+      <label for="summary-input">Resumen del partido:</label>
+      <textarea id="summary-input" placeholder="Escribe aquí el resumen..."></textarea>
+
+      <!-- Guardar -->
+      <button id="save-match" class="btn save-btn">Guardar cambios</button>
+      
+
+    </div>
+
+  </div>
+
+  <!-- JS -->
+<script src="assets/js/load-json.js"></script>
+<script src="assets/js/admin-access.js"></script>
+<script src="assets/js/admin.js"></script>
+
+
+</body>
+</html>

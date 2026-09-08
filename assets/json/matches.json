@@ -1,0 +1,450 @@
+[
+  {
+    "j": 1,
+    "home": "Las Casas CD",
+    "away": "Sporting Torrenueva",
+    "date": "2026-09-13",
+    "time": "18:30",
+    "isHome": false,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  },
+  {
+    "j": 2,
+    "home": "Sporting Torrenueva",
+    "away": "Cd Piedrabuena",
+    "date": "2026-09-19",
+    "time": null,
+    "isHome": true,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  },
+  {
+    "j": 3,
+    "home": "Calatrava CF",
+    "away": "Sporting Torrenueva",
+    "date": "2026-09-26",
+    "time": null,
+    "isHome": false,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  },
+  {
+    "j": 4,
+    "home": "Sporting Torrenueva",
+    "away": "Infantes CF",
+    "date": "2026-10-03",
+    "time": null,
+    "isHome": true,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  },
+  {
+    "j": 5,
+    "home": "UD La Fuente B",
+    "away": "Sporting Torrenueva",
+    "date": "2026-10-10",
+    "time": null,
+    "isHome": false,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  },
+  {
+    "j": 6,
+    "home": "Sporting Torrenueva",
+    "away": "Ciudad Real FC",
+    "date": "2026-10-17",
+    "time": null,
+    "isHome": true,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  },
+  {
+    "j": 8,
+    "home": "Sporting Torrenueva",
+    "away": "Atlético Almagro",
+    "date": "2026-10-31",
+    "time": null,
+    "isHome": true,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  },
+  {
+    "j": 9,
+    "home": "Valenzuela AD",
+    "away": "Sporting Torrenueva",
+    "date": "2026-11-07",
+    "time": null,
+    "isHome": false,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  },
+  {
+    "j": 10,
+    "home": "Sporting Torrenueva",
+    "away": "Manchego Ciudad Real B",
+    "date": "2026-11-14",
+    "time": null,
+    "isHome": true,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  },
+  {
+    "j": 11,
+    "home": "Porzuna CDB",
+    "away": "Sporting Torrenueva",
+    "date": "2026-11-21",
+    "time": null,
+    "isHome": false,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  },
+  {
+    "j": 12,
+    "home": "Sporting Torrenueva",
+    "away": "Corraleño CF",
+    "date": "2026-11-28",
+    "time": null,
+    "isHome": true,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  },
+  {
+    "j": 13,
+    "home": "Castillo de Cva Aldea del R",
+    "away": "Sporting Torrenueva",
+    "date": "2026-12-05",
+    "time": null,
+    "isHome": false,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  },
+  {
+    "j": 14,
+    "home": "Sporting Torrenueva",
+    "away": "Moraleño",
+    "date": "2026-12-12",
+    "time": null,
+    "isHome": true,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  },
+  {
+    "j": 15,
+    "home": "Sporting Torrenueva",
+    "away": "Calzada CF",
+    "date": "2026-12-19",
+    "time": null,
+    "isHome": true,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  },
+  {
+    "j": 16,
+    "home": "La Estrella CD",
+    "away": "Sporting Torrenueva",
+    "date": "2027-01-09",
+    "time": null,
+    "isHome": false,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  },
+  {
+    "j": 17,
+    "home": "Sporting Torrenueva",
+    "away": "Poblete UD",
+    "date": "2027-01-16",
+    "time": null,
+    "isHome": true,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  },
+  {
+    "j": 18,
+    "home": "Sporting Torrenueva",
+    "away": "Las Casas CD",
+    "date": "2027-01-23",
+    "time": null,
+    "isHome": true,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  },
+  {
+    "j": 19,
+    "home": "Cd Piedrabuena",
+    "away": "Sporting Torrenueva",
+    "date": "2027-01-30",
+    "time": null,
+    "isHome": false,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  },
+  {
+    "j": 20,
+    "home": "Sporting Torrenueva",
+    "away": "Calatrava CF",
+    "date": "2027-02-06",
+    "time": null,
+    "isHome": true,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  },
+  {
+    "j": 21,
+    "home": "Infantes CF",
+    "away": "Sporting Torrenueva",
+    "date": "2027-02-13",
+    "time": null,
+    "isHome": false,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  },
+  {
+    "j": 22,
+    "home": "Sporting Torrenueva",
+    "away": "UD La Fuente B",
+    "date": "2027-02-20",
+    "time": null,
+    "isHome": true,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  },
+  {
+    "j": 23,
+    "home": "Ciudad Real FC",
+    "away": "Sporting Torrenueva",
+    "date": "2027-02-28",
+    "time": "10:30",
+    "isHome": false,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  },
+  {
+    "j": 25,
+    "home": "Atlético Almagro",
+    "away": "Sporting Torrenueva",
+    "date": "2027-03-13",
+    "time": null,
+    "isHome": false,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  },
+  {
+    "j": 26,
+    "home": "Sporting Torrenueva",
+    "away": "Valenzuela AD",
+    "date": "2027-03-20",
+    "time": null,
+    "isHome": true,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  },
+  {
+    "j": 27,
+    "home": "Manchego Ciudad Real B",
+    "away": "Sporting Torrenueva",
+    "date": "2027-04-03",
+    "time": null,
+    "isHome": false,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  },
+  {
+    "j": 28,
+    "home": "Sporting Torrenueva",
+    "away": "Porzuna CDB",
+    "date": "2027-04-10",
+    "time": null,
+    "isHome": true,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  },
+  {
+    "j": 29,
+    "home": "Corraleño CF",
+    "away": "Sporting Torrenueva",
+    "date": "2027-04-17",
+    "time": null,
+    "isHome": false,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  },
+  {
+    "j": 30,
+    "home": "Sporting Torrenueva",
+    "away": "Castillo de Cva Aldea del R",
+    "date": "2027-04-24",
+    "time": null,
+    "isHome": true,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  },
+  {
+    "j": 31,
+    "home": "Moraleño",
+    "away": "Sporting Torrenueva",
+    "date": "2027-05-01",
+    "time": null,
+    "isHome": false,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  },
+  {
+    "j": 32,
+    "home": "Calzada CF",
+    "away": "Sporting Torrenueva",
+    "date": "2027-05-08",
+    "time": null,
+    "isHome": false,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  },
+  {
+    "j": 33,
+    "home": "Sporting Torrenueva",
+    "away": "La Estrella CD",
+    "date": "2027-05-15",
+    "time": null,
+    "isHome": true,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  },
+  {
+    "j": 34,
+    "home": "Poblete UD",
+    "away": "Sporting Torrenueva",
+    "date": "2027-05-22",
+    "time": null,
+    "isHome": false,
+    "score": null,
+    "details": {
+      "scorers": [],
+      "summary": "",
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+    }
+  }
+]

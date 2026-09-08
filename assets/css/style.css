@@ -1,0 +1,611 @@
+:root{
+    --bg: #f5f5f7;
+    --card: #ffffff;
+    --ink: #1d1d1f;
+    --ink-soft: #6e6e73;
+    --line: #e5e5ea;
+    --green: #2805FB;
+    --green-deep: #00013f;
+    --green-tint: #e9f5eb;
+    --red-tint: #fdeceb;
+    --red: #c0392b;
+    --gold: #b8860b;
+    --radius: 18px;
+    --radius-sm: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  *{ box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--ink);
+    padding: 32px 18px 80px;
+  }
+
+  .wrap{ max-width: 640px; margin: 0 auto; }
+/* Header */
+.club-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* ← CLAVE */
+  margin-bottom: 28px;
+  padding: 0 4px;
+}
+
+/* Agrupa escudo + nombre */
+.club-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Escudo */
+.crest {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.crest img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Nombre del club */
+.club-header h1 {
+  font-size: 19px;
+  font-weight: 650;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.club-header p {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+/* Botón Admin */
+
+/* Botón Admin como icono */
+.login-icon-btn {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 10px 10px;
+  cursor: pointer;
+  transition: 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-icon-btn:hover {
+  background: var(--bg);
+  transform: translateY(-2px);
+}
+
+/* Icono SVG */
+.login-icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--text);
+}
+
+
+/*Anterior Btn admin*/
+.login-btn {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  transition: 0.15s ease;
+}
+
+.login-btn:hover {
+  background: var(--bg);
+  transform: translateY(-2px);
+}
+
+
+  /* Hero: próximo partido */
+  .hero{
+    background: linear-gradient(160deg, #090489 0% 0%, #00013f 100%);
+    border-radius: 24px;
+    padding: 26px 24px 24px;
+    color: white;
+    box-shadow: 0 10px 30px -12px rgba(31,92,41,0.55);
+    margin-bottom: 34px;
+  }
+  .hero-label{
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 0.85;
+    margin: 0 0 18px;
+  }
+  .hero-teams{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap: 10px;
+  }
+  .hero-team{
+    flex: 1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap: 10px;
+    text-align:center;
+  }
+  .hero-badge{
+    width:56px; height:56px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.16);
+    display:flex; align-items:center; justify-content:center;
+    font-weight:700;
+    font-size: 15px;
+    border: 1px solid rgba(255,255,255,0.25);
+  }
+  .hero-team.us .hero-badge{
+    background: white;
+    color: var(--green-deep);
+  }
+  .hero-team span{
+    font-size: 13.5px;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+  .hero-mid{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap: 4px;
+    min-width: 74px;
+  }
+  .hero-vs{
+    font-size: 12px;
+    opacity: 0.7;
+    font-weight: 600;
+  }
+  .hero-date{
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .hero-time{
+    font-size: 12px;
+    opacity: 0.85;
+  }
+  .hero-foot{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    margin-top: 22px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    font-size: 12.5px;
+  }
+  .hero-foot .comp{ opacity: 0.85; }
+  .hero-foot .countdown{
+    background: rgba(255,255,255,0.18);
+    padding: 5px 11px;
+    border-radius: 100px;
+    font-weight: 600;
+  }
+
+  /* Section title */
+  .section-title{
+    font-size: 22px;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    margin: 0 0 4px;
+    padding: 0 4px;
+  }
+  .section-sub{
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    margin: 0 0 16px;
+    padding: 0 4px;
+  }
+
+  /* Filter pills */
+  .filters{
+    display:flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding: 0 4px;
+  }
+  .pill{
+    border: none;
+    background: var(--card);
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 100px;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .pill.active{
+    background: var(--ink);
+    color: white;
+  }
+
+  /* Month groups */
+  .month-group{ margin-bottom: 22px; }
+  .month-label{
+    font-size: 12.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--ink-soft);
+    margin: 0 0 8px;
+    padding: 0 8px;
+  }
+
+  .match-list{
+    background: var(--card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .match-row{
+    display:flex;
+    align-items:center;
+    gap: 12px;
+    padding: 13px 16px;
+    border-bottom: 1px solid var(--line);
+  cursor: pointer;
+  }
+  .match-row:last-child{ border-bottom: none; }
+
+  .jday{
+    width: 30px;
+    flex-shrink:0;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--ink-soft);
+    text-align:center;
+  }
+
+  .match-teams{
+    flex: 1;
+    min-width: 0;
+    display:flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .team-line{
+    display:flex;
+    align-items:center;
+    gap: 6px;
+    font-size: 14px;
+    color: var(--ink);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .team-line.us{ font-weight: 650; }
+  .team-line .tag{
+    font-size: 10px;
+    font-weight: 700;
+    color: white;
+    background: green;
+    padding: 1px 6px;
+    border-radius: 5px;
+    flex-shrink: 0;
+  }
+
+  .match-right{
+    flex-shrink:0;
+    text-align:right;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap: 3px;
+    min-width: 58px;
+  }
+  .match-date{
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    font-weight: 600;
+  }
+  .match-score{
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .match-score.win{ color: var(--green); }
+  .match-score.loss{ color: var(--red); }
+  .match-score.draw{ color: var(--gold); }
+
+  .result-dot{
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .dot-win{ background: var(--green); }
+  .dot-loss{ background: var(--red); }
+  .dot-draw{ background: var(--gold); }
+
+  footer{
+    text-align:center;
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    margin-top: 30px;
+    padding: 0 20px;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 380px){
+    .hero-badge{ width:48px; height:48px; font-size:13px; }
+    .hero-date{ font-size: 18px; }
+  }
+
+.hero .badge-img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+.badge-img{
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.match-score {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* separación entre punto y texto */
+}
+
+
+.match-score.win{ color: #008000; }
+.match-score.loss{ color: var(--red); }
+.match-score.draw{ color: var(--gold); }
+
+.result-dot{
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dot-win{ background: #008000; }
+.dot-loss{ background: var(--red); }
+.dot-draw{ background: var(--gold); }
+
+/* ============================================================
+   BOTÓN ADMIN (INDEX)
+   ============================================================ */
+
+#login-btn{
+  margin-top: 18px;
+  margin-bottom: 10px;
+  padding: 10px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink-soft);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+#login-btn:hover{
+  background: #f0f0f5;
+}
+
+
+/* ============================================================
+   MODAL PARTIDO — versión mejorada
+   ============================================================ */
+
+.disabled-vote {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+
+#match-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(4px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  animation: modalFadeIn 0.25s ease-out;
+}
+
+/* Animación suave */
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background: var(--card);
+  border-radius: 22px;
+  padding: 22px 20px 20px;
+  max-width: 520px;
+  width: calc(100% - 40px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.22);
+  transform: translateY(10px);
+  animation: modalSlideUp 0.25s ease-out;
+}
+
+@keyframes modalSlideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Header */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+#modal-title {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--ink);
+  margin-right: 20px;
+}
+
+/* Botón cerrar */
+#modal-close {
+  border: none;
+  background: red;
+  border-radius: 100px;
+  width: 30px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #ffffff;
+  padding: 4px;
+  transition: 0.15s ease;
+  position: absolute;
+  right: 20px;
+  top: 18px;
+}
+
+#modal-close:hover {
+  color: #fff;
+  transform: scale(1.15);
+}
+
+/* Body */
+.modal-body {
+  font-size: 14px;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+#modal-score {
+  font-weight: 650;
+  font-size: 15px;
+}
+
+#modal-summary {
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+#modal-scorers {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+}
+
+/* Votación */
+.modal-vote-title {
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 650;
+  color: var(--ink);
+}
+
+.vote-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.vote-btn {
+  flex: 1;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 12px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--bg);
+  color: var(--ink-soft);
+  transition: 0.15s ease;
+}
+
+/* Hover general */
+.vote-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+/* Colores específicos */
+.vote-btn[data-vote="malo"] {
+  background: var(--red-tint);
+  color: var(--red);
+}
+
+.vote-btn[data-vote="normal"] {
+  background: #f2f2f7;
+  color: var(--ink-soft);
+}
+
+.vote-btn[data-vote="bueno"] {
+  background: var(--green-tint);
+  color: var(--green-deep);
+}
+
+#vote-status {
+  margin-top: 10px;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+
+/* Estilos de la gráfica de los votos*/
+.vote-chart {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f4f4f4;
+  border-radius: 8px;
+}
+
+.vote-bar {
+  height: 22px;
+  margin: 8px 0;
+  background: #ddd;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.vote-bar-fill {
+  height: 100%;
+  background: #4a90e2;
+  width: 0%;
+  transition: width 0.4s ease;
+}
+
+.vote-bar-label {
+  position: absolute;
+  left: 10px;
+  top: 2px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+}
