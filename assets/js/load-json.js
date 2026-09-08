@@ -45,10 +45,10 @@ fetch("assets/json/matches.json")
     // Mezclar con datos guardados del admin
     loadMatchesFromLocalStorage();
 
-    /* ------------------------------------------------------------
+       /* ------------------------------------------------------------
        SI ESTAMOS EN index.html → renderizar la web
        ------------------------------------------------------------ */
-    if (window.location.pathname.includes("index.html")) {
+    if (document.getElementById("hero")) {
       if (typeof renderHero === "function") renderHero();
       if (typeof renderSchedule === "function") renderSchedule("all");
     }
@@ -56,7 +56,7 @@ fetch("assets/json/matches.json")
     /* ------------------------------------------------------------
        SI ESTAMOS EN admin.html → iniciar panel admin
        ------------------------------------------------------------ */
-    if (window.location.pathname.includes("admin.html")) {
+    if (document.getElementById("admin-panel") /* o el id que uses en admin.html */) {
       if (isAdminLogged() && typeof initAdminPanel === "function") {
         initAdminPanel();
       }

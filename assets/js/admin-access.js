@@ -4,14 +4,14 @@
 
 /**
  * Solo ejecutar el botón "Admin" cuando estamos en index.html
+ * (comprobamos por la existencia del elemento, no por la URL,
+ * porque en producción la URL raíz no incluye "index.html")
  */
-if (window.location.pathname.includes("index.html")) {
-  const loginBtn = document.getElementById("login-btn");
-  if (loginBtn) {
-    loginBtn.addEventListener("click", () => {
-      window.location.href = "admin.html";
-    });
-  }
+const loginBtn = document.getElementById("login-btn");
+if (loginBtn) {
+  loginBtn.addEventListener("click", () => {
+    window.location.href = "admin.html";
+  });
 }
 
 
@@ -36,10 +36,10 @@ function adminLogout() {
    CONTROL DE VISTAS EN admin.html
    ============================================================ */
 
-if (window.location.pathname.includes("admin.html")) {
+const loginView = document.getElementById("login-view");
+const panelView = document.getElementById("panel-view");
 
-  const loginView = document.getElementById("login-view");
-  const panelView = document.getElementById("panel-view");
+if (loginView && panelView) {
 
   // Mostrar login o panel según sesión
   if (!isAdminLogged()) {
