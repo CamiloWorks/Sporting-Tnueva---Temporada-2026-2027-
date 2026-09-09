@@ -54,6 +54,9 @@ function loadMatchData(index) {
   document.getElementById("summary-input").value = m.details?.summary || "";
   document.getElementById("scorers-input").value =
     m.details?.scorers?.length ? m.details.scorers.join(", ") : "";
+
+  document.getElementById("match-date").value = m.date || "";
+  document.getElementById("match-time").value = m.time || "";
 }
 
 
@@ -85,6 +88,10 @@ function saveMatchData(index) {
   m.details.scorers = scorersRaw
     ? scorersRaw.split(",").map(s => s.trim()).filter(Boolean)
     : [];
+
+  // Guardar fecha y hora
+  m.date = document.getElementById("match-date").value || null;
+  m.time = document.getElementById("match-time").value || null;
 
   // Guardar en localStorage
   saveMatchesToLocalStorage();

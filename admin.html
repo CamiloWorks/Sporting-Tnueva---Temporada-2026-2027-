@@ -10,6 +10,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="assets/css/admin.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 
   <!-- Fuente -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,18 +42,40 @@
 
     <!-- PANEL -->
     <div id="panel-view" class="panel-view" style="display:none;">
-      <button id="logout-btn" class="flotar">Cerrar sesión</button>
-           
+      <button id="logout-btn" class="flotar">Volver</button>
 
+       <div class="club-header">
+        <!-- IZQUIERDA: escudo + nombre -->
+        <div class="club-info">
+          <div class="crest">
+            <img src="img/escudo-mid.png" alt="Escudo Sporting Torrenueva">
+          </div>
+          <div>
+            <h1>Sporting Torrenueva</h1>
+            <p>2ª Autonómica · Castilla-La Mancha</p>
+          </div>
+        </div>
+        
+      </div>
+
+      <!-- ----------------------------- Botón de Volver
       <div class="panel-header">
         <h2>Panel de resultados</h2>
         <button id="go-home-btn" class="logout-btn">Volver</button>
       </div>
-
+      -->
 
       <!-- Selector de partido -->
       <label for="match-select">Seleccionar jornada:</label>
       <select id="match-select"></select>
+
+      <!-- Campos de edición de fecha y hora -->
+
+      <label for="match-date">Modificar día del partido</label>
+      <input type="date" id="match-date" class="panel-input">
+
+      <label for="match-time">Modificar hora del partido</label>
+      <input type="time" id="match-time" class="panel-input">
 
       <!-- Resultado -->
       <label for="score-input">Resultado:</label>

@@ -73,6 +73,17 @@ if (loginView && panelView) {
     });
   }
 
+  // Permitir iniciar sesión pulsando Enter en el campo de contraseña
+const passInput = document.getElementById("admin-pass");
+
+if (passInput) {
+  passInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      loginSubmit.click(); // Ejecuta exactamente lo mismo que el botón
+    }
+  });
+}
+
   /* --- LOGOUT --- */
   const logoutBtn = document.getElementById("logout-btn");
   if (logoutBtn) {

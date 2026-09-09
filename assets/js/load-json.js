@@ -15,9 +15,11 @@ function loadMatchesFromLocalStorage() {
   try {
     const savedMatches = JSON.parse(saved);
 
-    // Mezclar por j + date (correcto y seguro)
+    // Mezclar por j + home + away (estos campos nunca se editan, a diferencia de date)
     matches = matches.map(m => {
-      const found = savedMatches.find(s => s.j === m.j && s.date === m.date);
+      const found = savedMatches.find(
+        s => s.j === m.j && s.home === m.home && s.away === m.away
+      );
       return found ? found : m;
     });
 

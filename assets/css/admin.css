@@ -1,191 +1,262 @@
-/* ============================================================
-   ADMIN PANEL — estilo unificado con el modal
-   ============================================================ */
-
-:root {
+:root{
   --bg: #f5f5f7;
   --card: #ffffff;
+  --ink: #1d1d1f;
+  --ink-soft: #6e6e73;
   --line: #e5e5ea;
-  --text: #1c1c1e;
-  --sub: #8e8e93;
-  --green: #34c759;
-  --red: #ff3b30;
-  --gold: #ffcc00;
-
-  --radius: 20px;
-  --shadow: 0 18px 40px rgba(0,0,0,0.12);
+  --green: #2805FB;
+  --green-deep: #00013f;
+  --green-tint: #e9f5eb;
+  --red-tint: #fdeceb;
+  --red: #c0392b;
+  --gold: #b8860b;
+  --radius: 18px;
+  --radius-sm: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
 }
 
-body {
-  margin: 0;
-  font-family: Inter, sans-serif;
+*{ box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+
+body{
+  margin:0;
   background: var(--bg);
-  color: var(--text);
+  color: var(--ink);
+  padding: 32px 18px 80px;
 }
 
-.admin-wrap {
-  max-width: 600px;
+.admin-wrap{
+  max-width: 460px;
   margin: 0 auto;
-  padding: 24px;
 }
 
 /* ============================================================
    LOGIN VIEW
    ============================================================ */
 
-.login-view {
+.login-view{
   background: var(--card);
-  padding: 26px 22px;
   border-radius: var(--radius);
-  border: 1px solid var(--line);
-  margin-top: 50px;
+  padding: 32px 26px 30px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  box-shadow: var(--shadow);
-  animation: fadeIn 0.25s ease-out;
+  gap: 4px;
 }
 
-.login-view h2 {
-  margin-bottom: 22px;
-  font-size: 20px;
-  font-weight: 700;
+.login-view img{
+  border-radius: 16px;
+  margin: 6px 0 14px;
 }
 
-.login-view input {
-  width: 90%;
-  padding: 12px 14px;
-  font-size: 14px;
-  border-radius: 14px;
-  border: 1px solid var(--line);
-  margin-bottom: 16px;
-  background: #fafafa;
-  transition: 0.15s ease;
+.login-view h2{
+  font-size: 19px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  margin: 0 0 22px;
+  color: var(--ink);
 }
 
-.login-view input:focus {
-  outline: none;
-  border-color: var(--text);
-  background: #fff;
-}
-
-.btn {
-  padding: 12px 16px;
-  border-radius: 14px;
-  border: none;
-  background: #34C759;
-  color: #fff;
-  font-size: 14px;
-  cursor: pointer;
+.login-view input{
   width: 100%;
-  font-weight: 600;
+  padding: 13px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: var(--bg);
+  font-size: 14.5px;
+  color: var(--ink);
+  margin-bottom: 14px;
+  outline: none;
   transition: 0.15s ease;
 }
 
-.btn:hover {
+.login-view input:focus{
+  border-color: var(--green);
+  background: var(--card);
+  box-shadow: 0 0 0 3px rgba(40,5,251,0.12);
+}
+
+.login-view input::placeholder{
+  color: var(--ink-soft);
+}
+
+/* Botón "Volver" en la esquina */
+.login-view > a{
+  align-self: flex-start;
+}
+
+/* ============================================================
+   BOTONES
+   ============================================================ */
+
+.btn{
+  width: 100%;
+  padding: 13px 16px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(160deg, #090489 0%, #00013f 100%);
+  color: #fff;
+  font-size: 14.5px;
+  font-weight: 650;
+  cursor: pointer;
+  box-shadow: 0 10px 20px -10px rgba(9,4,137,0.55);
+  transition: 0.15s ease;
+}
+
+.btn:hover{
   transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  box-shadow: 0 14px 24px -10px rgba(9,4,137,0.6);
+}
+
+.btn:active{
+  transform: translateY(0);
+}
+
+.save-btn{
+  margin-top: 22px;
+}
+
+.logout-btn{
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  transition: 0.15s ease;
+}
+
+.logout-btn:hover{
+  background: var(--bg);
+  transform: translateY(-2px);
+}
+
+.flotar{
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: #fff;
+    cursor: pointer;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--red);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    transition: 0.15s ease;
+    margin: 0px 10px 20px 0px;
+    z-index: 5;
+}
+
+.flotar:hover{
+  background: var(--red-tint);
+  transform: translateY(-2px);
 }
 
 /* ============================================================
    PANEL VIEW
    ============================================================ */
 
-.panel-view {
-  position: relative; /* Necesario para el botón flotante */
+.panel-view{
+  position: relative;
   background: var(--card);
-  padding: 26px 22px;
   border-radius: var(--radius);
-  border: 1px solid var(--line);
-  margin-top: 40px;
-  box-shadow: var(--shadow);
-  animation: fadeIn 0.25s ease-out;
+  padding: 58px 24px 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 
-/* ============================================================
-   HEADER DEL PANEL
-   ============================================================ */
-
-.panel-header {
+.panel-header{
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   margin-bottom: 22px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
 }
 
-.panel-header h2 {
-  font-size: 18px;
+.panel-header h2{
+  font-size: 20px;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--ink);
+}
+
+.panel-view label{
+  display: block;
+  font-size: 12.5px;
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  margin: 18px 0 8px;
 }
 
-/* ============================================================
-   BOTÓN "VOLVER" — estilo secundario
-   ============================================================ */
+.panel-view label:first-of-type{
+  margin-top: 0;
+}
 
-.logout-btn {
-  padding: 8px 14px;
-  border-radius: 999px;
+.panel-view select,
+.panel-view input[type="text"],
+.panel-view textarea{
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
   border: 1px solid var(--line);
-  background: #fff;
-  cursor: pointer;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text);
-  transition: 0.15s ease;
-}
-
-.logout-btn:hover {
   background: var(--bg);
-  color: var(--text);
-  transform: translateY(-2px);
+  font-size: 14px;
+  color: var(--ink);
+  outline: none;
+  transition: 0.15s ease;
+  font-family: inherit;
 }
 
+.panel-view select:focus,
+.panel-view input[type="text"]:focus,
+.panel-view textarea:focus{
+  border-color: var(--green);
+  background: var(--card);
+  box-shadow: 0 0 0 3px rgba(40,5,251,0.12);
+}
 
+.panel-view textarea{
+  min-height: 100px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.panel-view select{
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236e6e73' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 34px;
+}
+
+@media (max-width: 380px){
+  .admin-wrap{ max-width: 100%; }
+  .login-view{ padding: 26px 20px 24px; }
+  .panel-view{ padding: 22px 18px 20px; }
+}
 
 /* ============================================================
-   BOTÓN "CERRAR SESIÓN" — acción crítica
+   CAMPOS NUEVOS: Fecha y hora del partido
    ============================================================ */
 
-.flotar {
-  position: absolute;
-  top: -50px;
-  right: 0px;
-
-  background-color: var(--red);
-  color: #fff;
-
-  padding: 8px 14px;
-  border-radius: 999px;
-  border: none;
-
-  cursor: pointer;
-  font-size: 13px;
-  font-weight: 600;
-
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  transition: background 0.15s ease, transform 0.15s ease;
-}
-
-.flotar:hover {
-  background-color: #d12a25;
-  transform: translateY(-2px);
-}
-
-/* ============================================================
-   FORM FIELDS
-   ============================================================ */
-
-label {
+label[for="match-date"],
+label[for="match-time"] {
   display: block;
   margin-top: 18px;
   margin-bottom: 6px;
   font-size: 14px;
   font-weight: 600;
+  color: var(--ink-soft);
 }
 
-#match-select,
-#score-input,
-#scorers-input,
-#summary-input {
-  width: 90%;
+#match-date,
+#match-time {
+  width: 100%;
   padding: 12px 14px;
   font-size: 14px;
   border-radius: 14px;
@@ -194,48 +265,9 @@ label {
   transition: 0.15s ease;
 }
 
-#match-select:focus,
-#score-input:focus,
-#scorers-input:focus,
-#summary-input:focus {
+#match-date:focus,
+#match-time:focus {
   outline: none;
   border-color: var(--text);
   background: #fff;
-}
-
-#summary-input {
-  min-height: 130px;
-  resize: none;
-  line-height: 1.5;
-}
-
-/* ============================================================
-   SAVE BUTTON
-   ============================================================ */
-
-.save-btn {
-  margin-top: 24px;
-  background: var(--green);
-  color: #fff;
-  font-weight: 650;
-  padding: 12px 16px;
-  border-radius: 14px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  transition: 0.15s ease;
-}
-
-.save-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-}
-
-/* ============================================================
-   ANIMACIONES
-   ============================================================ */
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
 }
