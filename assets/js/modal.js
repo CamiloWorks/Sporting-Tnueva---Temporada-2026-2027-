@@ -47,9 +47,18 @@ function openMatchModal(match) {
 
   const m = matches[currentMatchIndex];
 
-  // Título
+  // Título (oculto, se mantiene para accesibilidad/compatibilidad)
   document.getElementById("modal-title").textContent =
     `J${m.j} · ${m.home} vs ${m.away}`;
+
+  // Jornada
+  document.getElementById("modal-jornada").textContent = `Jornada ${m.j}`;
+
+  // Escudos y nombres de los equipos
+  document.getElementById("modal-home-badge").innerHTML = getBadge(m.home);
+  document.getElementById("modal-home-name").textContent = m.home;
+  document.getElementById("modal-away-badge").innerHTML = getBadge(m.away);
+  document.getElementById("modal-away-name").textContent = m.away;
 
   // Resultado
   document.getElementById("modal-score").textContent =
@@ -59,12 +68,10 @@ function openMatchModal(match) {
   document.getElementById("modal-summary").innerHTML =
   `<i>Mensaje del Entrenador:</i><br>"${m.details?.summary || "Sin resumen disponible"}"`;
 
-
- document.getElementById("modal-scorers").innerHTML =
+  document.getElementById("modal-scorers").innerHTML =
   m.details?.scorers?.length
     ? `<strong>Goles:</strong> ${m.details.scorers.join(", ")}`
     : "Sin goleadores registrados";
-
 
   // Estado de voto
   document.getElementById("vote-status").textContent = "";
