@@ -52,6 +52,7 @@ fetch("assets/json/matches.json")
        ------------------------------------------------------------ */
     if (document.getElementById("hero")) {
       if (typeof renderHero === "function") renderHero();
+      if (typeof renderPoints === "function") renderPoints();
       if (typeof renderSchedule === "function") renderSchedule("all");
     }
 

@@ -10,7 +10,7 @@
     "details": {
       "scorers": [],
       "summary": "",
-      "votes": { "malo": 0, "normal": 0, "bueno": 0 }
+      "votes": { "malo": 0, "normal": 0, "bueno": 0 } 
     }
   },
   {
@@ -155,7 +155,7 @@
   },
   {
     "j": 13,
-    "home": "Castillo de Cva Aldea del R",
+    "home": "Castillo de Cva Aldea del Rey",
     "away": "Sporting Torrenueva",
     "date": "2026-12-05",
     "time": null,
@@ -380,7 +380,7 @@
   {
     "j": 30,
     "home": "Sporting Torrenueva",
-    "away": "Castillo de Cva Aldea del R",
+    "away": "Castillo de Cva Aldea del Rey",
     "date": "2027-04-24",
     "time": null,
     "isHome": true,

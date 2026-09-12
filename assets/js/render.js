@@ -105,7 +105,18 @@ function renderHero() {
   `;
 }
 
+/* ============================================================
+   RENDER DE PUNTOS
+   ============================================================ */
 
+function renderPoints() {
+  const points = calculatePoints();
+  const el = document.getElementById("points");
+  if (el) {
+    el.textContent = points;
+  }
+  return points;
+}
 
 /* ============================================================
    RENDER DEL LISTADO DE PARTIDOS
@@ -156,13 +167,13 @@ function renderSchedule(filter = "all") {
         <div class="match-teams">
           <div class="team-line ${m.isHome ? "us" : ""}">
             ${m.isHome ? '<span class="tag">CASA</span>' : ""}
-            <img src="assets/img/escudosEquipos/${ESCUDOS[m.home] || "generico.png"}" class="badge-img">
+            <img src="img/escudosEquipos/${ESCUDOS[m.home] || "generico.png"}" class="badge-img">
             ${m.home}
           </div>
 
           <div class="team-line ${!m.isHome ? "us" : ""}">
             ${!m.isHome ? '<span class="tag" style="background:#8a8a8e">FUERA</span>' : ""}
-            <img src="assets/img/escudosEquipos/${ESCUDOS[m.away] || "generico.png"}" class="badge-img">
+            <img src="img/escudosEquipos/${ESCUDOS[m.away] || "generico.png"}" class="badge-img">
             ${m.away}
           </div>
         </div>
@@ -196,28 +207,14 @@ function renderSchedule(filter = "all") {
   });
 }
 
-
-
 /* ============================================================
-   FILTROS Y BUSCADOR
+   FILTROS (pills)
    ============================================================ */
 
-document.querySelectorAll(".filter-btn").forEach(btn => {
+document.querySelectorAll(".pill").forEach(btn => {
   btn.addEventListener("click", () => {
-    document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+    document.querySelectorAll(".pill").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
-
-    const filter = btn.dataset.filter;
-    renderSchedule(filter);
-  });
-});
-
-document.getElementById("search").addEventListener("input", e => {
-  const term = e.target.value.toLowerCase();
-  const schedule = document.getElementById("schedule");
-
-  schedule.querySelectorAll(".match-row").forEach(row => {
-    const text = row.textContent.toLowerCase();
-    row.style.display = text.includes(term) ? "flex" : "none";
+    renderSchedule(btn.dataset.filter);
   });
 });

@@ -206,12 +206,31 @@
   }
 
   /* Section title */
+  .section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.points-widget {
+    white-space: nowrap;
+    font-weight: 600;
+    border-radius: 500px;
+    border: 1px solid #8A8A8E;
+    padding: 15px;
+    margin: 0px 0px 10px 0px;
+}
+  
   .section-title{
     font-size: 22px;
     font-weight: 650;
     letter-spacing: -0.02em;
-    margin: 0 0 4px;
+    margin: 0px;
     padding: 0 4px;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
   }
   .section-sub{
     font-size: 13.5px;
@@ -480,8 +499,9 @@
 #modal-close {
   border: none;
   background: red;
-  border-radius: 100px;
+  border-radius: 100%;
   width: 30px;
+  height: 30px;
   font-size: 20px;
   cursor: pointer;
   color: #ffffff;
@@ -665,7 +685,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
   flex-shrink: 0;
 }
 

@@ -62,7 +62,7 @@ function openMatchModal(match) {
 
   // Resultado
   document.getElementById("modal-score").textContent =
-    m.score ? `Resultado: ${m.score}` : "Sin resultado aún";
+    m.score ? `Resultado: ${m.score}` : "Partido no jugado";
 
   // Resumen
   document.getElementById("modal-summary").innerHTML =
@@ -71,7 +71,7 @@ function openMatchModal(match) {
   document.getElementById("modal-scorers").innerHTML =
   m.details?.scorers?.length
     ? `<strong>Goles:</strong> ${m.details.scorers.join(", ")}`
-    : "Sin goleadores registrados";
+    : "Sin goles registrados";
 
   // Estado de voto
   document.getElementById("vote-status").textContent = "";
